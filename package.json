@@ -1,0 +1,21 @@
+{
+  "name": "test1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "serve": "node ./src/server/index.js",
+    "start": "npm run serve",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.16.3",
+    "prettier": "^1.11.1",
+    "typescript": "^2.7.2",
+    "webpack": "^4.1.1",
+    "webpack-dev-middleware": "^3.0.1"
+  }
+}
