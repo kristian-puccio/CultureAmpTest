@@ -1,6 +1,13 @@
 import { combineReducers } from "redux";
 
-export interface StoreState {}
+const reducerThing = (state: boolean, action: Object) => {
+  return action;
+};
 
-const reducer = combineReducers<StoreState>({});
+export interface StoreState {
+  readonly reducerThing: boolean;
+}
+
+const reducer = combineReducers<StoreState>({ reducerThing });
+
 export default reducer;

@@ -5,5 +5,10 @@ import App from "./App";
 
 const store = setupStore();
 
-const target = document.getElementById("main-content") as HTMLElement;
+const target = document.getElementById("main-content");
+if (!target)
+  throw new Error(
+    'Cant find div with ID "main-content" to render React inside.'
+  );
+
 ReactDOM.render(<App store={store} />, target);
