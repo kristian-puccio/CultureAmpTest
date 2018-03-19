@@ -13,7 +13,9 @@ interface Props {
 function App(props: Props) {
   return (
     <Provider store={props.store}>
-      <div>I am some content!</div>
+      <div className="bg-blue mx-auto max-w-sm shadow-lg rounded-lg overflow-hidden">
+        <div>I am some content!</div>
+      </div>
     </Provider>
   );
 }

@@ -1,5 +1,6 @@
 const webpack = require("webpack");
 const path = require("path");
+// const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 // This defines how webpack builds our app.
 // see https://webpack.js.org/concepts/ for more details.
@@ -48,6 +49,21 @@ module.exports = {
           "ts-loader",
         ],
       },
+      {
+        test: /\.css$/,
+        // use: ExtractTextPlugin.extract({
+        //   fallback: "style-loader",
+        //   use: [
+        //     { loader: "css-loader", options: { importLoaders: 1 } },
+        //     "postcss-loader",
+        //   ],
+        // }),
+        use: [
+          "style-loader",
+          { loader: "css-loader", options: { importLoaders: 1 } },
+          "postcss-loader",
+        ],
+      },
     ],
   },
 
@@ -58,5 +74,6 @@ module.exports = {
 
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
+    // new ExtractTextPlugin("styles.css"),
   ],
 };

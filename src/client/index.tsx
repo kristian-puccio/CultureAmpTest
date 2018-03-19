@@ -2,6 +2,7 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { setupStore } from "./store";
 import App from "./App";
+import "../styles.css";
 
 const store = setupStore();
 
