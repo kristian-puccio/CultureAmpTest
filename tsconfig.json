@@ -10,6 +10,5 @@
     "lib": ["es2017", "dom"],
     "forceConsistentCasingInFileNames": true
   },
-  "exclude": ["node_modules"],
   "files": ["./src/client/index.tsx"]
 }
