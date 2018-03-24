@@ -24,12 +24,15 @@ app.use(
 const wphmw = webpackHotMiddleware(compiler);
 app.use(wphmw);
 
-app.get("/", (req, res) =>
+// this is where we hook our rest api up to.
+app.use("/api", api);
+
+// all other routes are dealt with via the front-end router.
+// see: src/client/Routes.tsx
+app.get("*", (req, res) =>
   res.render("index", {
     title: "Culture Amp",
   })
 );
-
-app.use("/api", api);
 
 app.listen(3000, () => console.log("Listening on port 3000"));
