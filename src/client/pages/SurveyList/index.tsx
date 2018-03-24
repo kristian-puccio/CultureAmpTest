@@ -5,10 +5,9 @@ const SurveyList = () => (
   <div>
     <h1>SurveyList</h1>
     <DataLoader>
-      {data => {
-        console.log(data, "<<<< got data");
-        return <div>inside</div>;
-      }}
+      {({ surveys }) =>
+        surveys.map(s => <div key={s.name}>name: {s.name}</div>)
+      }
     </DataLoader>
   </div>
 );

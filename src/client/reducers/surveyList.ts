@@ -1,7 +1,7 @@
 import { ActionTypes, Constants } from "../actions";
 import { SurveyListResponse } from "../api";
 
-interface Survey {
+export interface Survey {
   name: string;
   participantCount: number;
   responseRate: number;
@@ -10,15 +10,17 @@ interface Survey {
 }
 
 export interface StoreState {
-  readonly hasData: boolean;
+  // Is the data loading?
   readonly isFetching: boolean;
-  readonly surveys: ReadonlyArray<Survey>;
+
+  // The list of surveys, this will be null if we don't have any data or
+  // haven't fetched yet.
+  readonly surveys: ReadonlyArray<Survey> | null;
 }
 
 const initialState = {
-  hasData: false,
   isFetching: false,
-  surveys: [],
+  surveys: null,
 };
 
 export default function reducer(
