@@ -3,7 +3,7 @@
  *
  * NOTE: I've set this to be readonly to encorage the use of immutability.
  */
-export interface SurveyList {
+export interface SurveyListResponse {
   readonly survey_results: ReadonlyArray<{
     name: string;
     url: string;
@@ -16,7 +16,7 @@ export interface SurveyList {
 /**
  * Calls the base api which returns a list of available surveys.
  */
-export async function getSurveys(): Promise<SurveyList> {
+export async function getSurveys(): Promise<SurveyListResponse> {
   const result = await fetch("/api/");
   return result.json();
 }

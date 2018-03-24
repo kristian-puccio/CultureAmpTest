@@ -1,8 +1,14 @@
+import { Dispatch } from "redux";
 import { ThunkAction } from "redux-thunk";
 import { StoreState } from "../reducers";
-import { SurveyList } from "../api";
+import {
+  SurveyRequestStart,
+  SurveyRequestSuccess,
+  SurveyRequestFailure,
+} from "./surveys";
 
 export type MyThunkAction<R> = ThunkAction<R, StoreState, void>;
+export type MyDispatch = Dispatch<StoreState>;
 
 export enum Constants {
   SURVEYLIST_REQUEST_START = "SURVEYLIST_REQUEST_START",
@@ -11,6 +17,6 @@ export enum Constants {
 }
 
 export type ActionTypes =
-  | { type: Constants.SURVEYLIST_REQUEST_START }
-  | { type: Constants.SURVEYLIST_REQUEST_SUCCESS; payload: SurveyList }
-  | { type: Constants.SURVEYLIST_REQUEST_FAILURE };
+  | SurveyRequestStart
+  | SurveyRequestSuccess
+  | SurveyRequestFailure;

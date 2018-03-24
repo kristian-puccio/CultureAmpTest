@@ -5,6 +5,7 @@
     "target": "es6",
     "jsx": "react",
     "strict": true,
+    "noImplicitAny": true,
     "sourceMap": true,
     "outDir": "dist",
     "lib": ["es2017", "dom"],
