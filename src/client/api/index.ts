@@ -18,5 +18,10 @@ export interface SurveyListResponse {
  */
 export async function getSurveys(): Promise<SurveyListResponse> {
   const result = await fetch("/api/");
-  return result.json();
+
+  // TODO: move this out to a common function
+  if (result.ok) return result.json();
+
+  //TODO: create error shape
+  throw new Error("TODO");
 }

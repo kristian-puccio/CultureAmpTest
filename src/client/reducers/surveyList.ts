@@ -18,7 +18,7 @@ export interface StoreState {
   readonly surveys: ReadonlyArray<Survey> | null;
 }
 
-const initialState = {
+export const initialState = {
   isFetching: false,
   surveys: null,
 };
